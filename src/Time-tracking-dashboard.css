@@ -1,0 +1,252 @@
+:root {
+  /* --- FONTS --- */
+  font-family: "Rubik";
+  font-size: 18px;
+  --light: 300;
+  --normal: 400;
+  --heavy: 500;
+  text-rendering: optimizeLegibility;
+
+  /* --- COLOR PALETTE --- */
+  --blue: hsl(246, 80%, 60%);
+  --light-red-work: hsl(15, 100%, 70%);
+  --soft-blue-play: hsl(195, 74%, 62%);
+  --light-red-study: hsl(348, 100%, 68%);
+  --lime-green-exercise: hsl(145, 58%, 55%);
+  --violet-social: hsl(264, 64%, 52%);
+  --soft-orange-self-care: hsl(43, 84%, 65%);
+  --very-dark-blue: hsl(226, 43%, 10%);
+  --dark-blue: hsl(235, 46%, 20%);
+  --desaturated-blue: hsl(235, 45%, 61%);
+  --pale-blue: hsl(236, 100%, 87%);
+}
+
+* {
+  box-sizing: border-box;
+  max-width: 100%;
+  padding: 0;
+  margin: 0 auto;
+  user-select: none;
+}
+
+.page {
+  min-width: 14rem;
+  background-color: var(--very-dark-blue);
+  display: grid;
+  grid-template: repeat(17, minmax(0, 1fr)) / repeat(10, minmax(0, 10%));
+  row-gap: 0.5rem;
+}
+
+#Owner {  
+  background-color: var(--dark-blue);
+  grid-column: 2 / span 8;
+  grid-row: 2 / span 3;
+}
+
+#Work {
+  background: var(--light-red-work) url(./images/icon-work.svg) no-repeat top right;
+  background-size: 15%;
+  grid-column: 2 / span 8;
+  grid-row: 5 / span 2;
+}
+
+#Play {
+  background: var(--soft-blue-play) url(./images/icon-play.svg) no-repeat top right;
+  background-size: 15%;
+  grid-column: 2 / span 8;
+  grid-row: 7 / span 2;
+}
+
+#Study {
+  background: var(--light-red-study) url(./images/icon-study.svg) no-repeat top right;
+  background-size: 15%;
+  grid-column: 2 / span 8;
+  grid-row: 9 / span 2;
+}
+
+#Exercise {
+  background: var(--lime-green-exercise) url(./images/icon-exercise.svg) no-repeat top right;
+  background-size: 15%;
+  grid-column: 2 / span 8;
+  grid-row: 11 / span 2;
+}
+
+#Social {
+  background: var(--violet-social) url(./images/icon-social.svg) no-repeat top right;
+  background-size: 15%;
+  grid-column: 2 / span 8;
+  grid-row: 13 / span 2;
+}
+
+#Self-Care {
+  background: var(--soft-orange-self-care) url(./images/icon-self-care.svg) no-repeat top right;
+  background-size: 15%;
+  grid-column: 2 / span 8;
+  grid-row: 15 / span 2;
+}
+
+.wrapper {
+  border-radius: 10px;
+  min-width: 100%;
+  min-height: 100%;
+  position: relative;
+}
+
+.card {
+  width: 100%;
+  border-radius: 8px;
+  padding: 1rem;
+}
+
+.gen {
+  background-color: var(--dark-blue);
+  position: absolute;
+  bottom: 0;
+}
+
+.gen:hover {
+  cursor: pointer;
+  opacity: 0.9;
+}
+
+.fix {
+  background-color: var(--blue);
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.5rem 1rem;
+}
+
+.sel {
+  background-color: var(--dark-blue);
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+}
+
+.avatar {
+  width: 2.5rem;
+  height: auto;
+  border: 3px solid var(--pale-blue);
+  border-radius: 50%;
+}
+
+.selectable {
+  color: var(--blue);
+  font-size: 0.8rem;
+  font-weight: var(--normal);
+}
+
+.selectable:hover {
+  cursor: pointer;
+  color: var(--pale-blue);
+}
+
+.main {
+  color: var(--pale-blue);
+  font-size: 1.25rem;
+  font-weight: var(--heavy);
+}
+
+.sub {
+  color: var(--pale-blue);
+  font-size: 0.75rem;
+  font-weight: var(--heavy);
+}
+
+.para {
+  color: var(--pale-blue);
+  font-size: 0.5rem;
+  font-weight: var(--light);
+}
+
+.gen > .para {
+  float: right;
+  margin-top: -1rem;
+}
+
+.attribution {
+  font-size: 0.5rem;
+  text-align: center;
+}
+
+.attribution > a {
+  color: var(--blue);
+}
+
+.error {
+  color: var(--light-red-study);
+}
+
+@media screen and (width>400px) {
+  .page {
+    min-width: 40rem;
+    min-height: 95vh;
+    display: grid;
+    grid-template: repeat(4, minmax(0, 24%)) / repeat(16, minmax(0, 6%));
+    gap: 1rem;
+  }
+  #Owner {
+    grid-column: 3 / span 3;
+    grid-row: 2 / span 2;
+  }
+  #Work {
+    grid-column: 6 / span 3;
+    grid-row: 2;
+  }
+  #Play {
+    grid-column: 9 / span 3;
+    grid-row: 2;
+  }
+  #Study {
+    grid-column: 12 / span 3;
+    grid-row: 2;
+  }
+  #Exercise {
+    grid-column: 6 / span 3;
+    grid-row: 3;
+  }
+  #Social {
+    grid-column: 9 / span 3;
+    grid-row: 3;
+  }
+  #Self-Care {
+    grid-column: 12 / span 3;
+    grid-row: 3;
+  }
+  .avatar {
+    margin: 0;
+  }
+  .fix {
+    flex-flow: column nowrap;
+    align-items: flex-start;
+    padding: 1rem;
+  }
+  .sel {
+    flex-flow: column nowrap;
+    align-items: flex-start;
+    gap: 0.5rem;
+    padding: 0.75rem 1rem;
+  }
+  .selectable {
+    margin: 0;
+  }
+  .main {
+    padding: 0.5rem 0rem 0.25rem;
+  }
+  .gen > .para {
+    float: none;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (width>1100px) {
+  .fix {
+    padding-bottom: 2rem;
+  }
+  .sel {
+    gap: 1rem;
+    padding: 1.5rem 1rem;
+  }
+}
